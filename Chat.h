@@ -32,8 +32,6 @@ private:
 		}
 	};
 	int hash_func(LoginName log, int offset);
-	void resize();
-	void add(char _login[NAMELOGIN]);
 	Pair* array;
 	int mem_size;
 	int count;

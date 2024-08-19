@@ -11,27 +11,6 @@ int Chat::hash_func(LoginName log, int offset)
 	return (sum % mem_size + offset * offset) % mem_size;
 }
 
-void Chat::resize()
-{
-	Pair* save_array = array; // запоминаем старый массив
-	int old_size = mem_size;
-
-	mem_size *= 2; // увеличиваем размер в два раза  
-	count = 0; // обнуляем количество элементов
-	array = new Pair[mem_size]; // выделяем новую память
-
-	for (int i = 0; i < old_size; i++)
-	{// перебираем все старые цепочки
-		Pair current = save_array[i];
-		if (current.status == enPairStatus::engaged)
-		{// пересчитываем хеши и добавляем в новый массив
-			
-		}
-	}
-	// чистим за собой
-	delete[]save_array;
-}
-
 
 Chat::Chat()
 {
