@@ -32,6 +32,7 @@ private:
 		}
 	};
 	int hash_func(LoginName log, int offset);
+	int hf_multiply(int val);
 	Pair* array;
 	int mem_size;
 	int count;

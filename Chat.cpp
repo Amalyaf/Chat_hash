@@ -8,7 +8,12 @@ int Chat::hash_func(LoginName log, int offset)
 		sum += log[i];
 	}
 	// квадратичные пробы
-	return (sum % mem_size + offset * offset) % mem_size;
+	return (hf_multiply(sum) + offset * offset) % mem_size;
+}
+
+int Chat::hf_multiply(int val) {
+	const double A = 0.7;
+	return int(mem_size * (A * val - int(A * val)));
 }
 
 
